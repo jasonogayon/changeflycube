@@ -16,6 +16,16 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
 
+  flutter_launcher_icons: ^0.6.1
+
+flutter_icons:
+  android: true
+  ios: true
+  image_path: "assets/changefly-cube.png"
+  image_path_android: "assets/changefly-cube.png"
+  image_path_ios: "assets/changefly-cube.png"
+  adaptive_icon_background: "#FFFAFAFA"
+  adaptive_icon_foreground: "assets/changefly-cube.png"
 
 flutter:
   uses-material-design: true
