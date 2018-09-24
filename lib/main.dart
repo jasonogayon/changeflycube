@@ -29,6 +29,7 @@ class _CubeState extends State<Cube> with SingleTickerProviderStateMixin {
   @override
   void initState() {
     super.initState();
+
     animationController = AnimationController(
       duration: Duration(milliseconds: 2000),
       vsync: this
@@ -152,23 +153,6 @@ class CubeNameAnimation extends AnimatedWidget {
           ),
         ),
       )
-    );
-  }
-}
-
-class LogoAnimation extends AnimatedWidget {
-  LogoAnimation({Key key, Animation animation})
-    : super(key: key, listenable: animation);
-
-  @override
-  Widget build(BuildContext context) {
-    Animation animation = listenable;
-    return Center(
-      child: Container(
-        height: animation.value,
-        width: animation.value,
-        child: Image.asset('assets/changefly-cube.png'),
-      ),
     );
   }
 }
