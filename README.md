@@ -9,6 +9,7 @@ A code challenge assignment from Changefly for a part-time internship program.
 1. [Clone the project](#clone-the-project)
 2. [Install app dependencies](#install-app-dependencies)
 3. [Run app](#run-app)
+4. [Code overview](#code-overview)
 
 ___
 
@@ -63,3 +64,24 @@ The app launcher icon is configured to use the `changefly-cube` logo, through th
 flutter pub get
 flutter pub pub run flutter_launcher_icons:main
 ~~~
+
+---
+
+## Code overview
+
+The app has only one screen, which is composed of four images being animated by a single animation controller. The images used in the app can be found inside the `/assets` directory.
+
+Each animated image is its own class:
+
+* CubeTopAnimation (uses the `changefly-cube-top.png` image), moving from top to center
+* CubeLeftAnimation (uses the `changefly-cube-left.png` image), moving from left to center
+* CubeRightAnimation (uses the `changefly-cube-right.png` image), moving from right to center
+* CubeNameAnimation (uses the `changefly-name.png` image), appears when the cube is formed at the center
+
+although they may be refactored into a single class. At the moment they're separated because I thought they're easier to read that way.
+
+The images are being displayed in the screen in a stack so that they align properly in the center.
+
+The animation happens by changing the opacity and padding values of the images while time passes, to show that they appear or disapper as well as to show that they move from a desired direction.
+
+The animation is set to go on reverse once the initial animation behavior gets completed. The original animation behavior also runs again after the reversed animation finishes. The animation is then in a loop.
